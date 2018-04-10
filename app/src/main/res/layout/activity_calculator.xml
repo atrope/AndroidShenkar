@@ -154,11 +154,11 @@
                     android:text="=" />
 
                 <Button
-                    android:id="@+id/buttondot"
+                    android:id="@+id/buttonClear"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".33"
-                    android:text="." />
+                    android:text="C" />
 
             </LinearLayout>
         </LinearLayout>
@@ -193,14 +193,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="÷" />
+                    android:text="/" />
+
 
                 <Button
-                    android:id="@+id/buttonClear"
+                    android:id="@+id/buttonMultiply"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="C" />
+                    android:text="*" />
 
 
             </LinearLayout>
