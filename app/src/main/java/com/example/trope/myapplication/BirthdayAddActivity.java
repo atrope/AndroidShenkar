@@ -38,6 +38,7 @@ public class BirthdayAddActivity extends AppCompatActivity {
         db  = Room.databaseBuilder(getApplicationContext(),BirthdayDatabase.class, "prod").allowMainThreadQueries().build();
         addNameBirthday = findViewById(R.id.addNameBirthday);
         calendarAddBirthdayView = findViewById(R.id.calendarAddBirthdayView);
+        calendarAddBirthdayView.setDate(631200000000L);
         actualDate = getDate(calendarAddBirthdayView.getDate(),dateFormat);
         calendarAddBirthdayView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             //show the selected date as a toast
@@ -51,8 +52,7 @@ public class BirthdayAddActivity extends AppCompatActivity {
         String name = addNameBirthday.getText().toString();
         User tmpUser = new User(name,parseDate(actualDate,dateFormat));
         try {
-            //db.userDao().insertAll(tmpUser);
-
+            db.userDao().insertAll(tmpUser);
             new MaterialDialog.Builder(this)
                     .title(R.string.dialog_addBirthday_successTitle)
                     .content(R.string.dialog_addBirthday_successContent)
