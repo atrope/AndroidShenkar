@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public UserAdapter(List<User> list){
         this.list = list;
     }
+
     @Override
     public UserAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.users_room,null);
@@ -23,12 +26,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     }
     @Override
     public void onBindViewHolder(UserAdapter.ViewHolder holder, int i){
-        User tmpuser = list.get(i);
-        holder.name.setText(tmpuser.getName());
-        long diffInSeconds = (new Date().getTime() - tmpuser.getBirthday().getTime()) / 1000;
+        User tmpUser = list.get(i);
+        long diffInSeconds = (new Date().getTime() - tmpUser.getBirthday().getTime()) / 1000;
         long years =  diffInSeconds/(604800*52);
-        String formattedDate = new SimpleDateFormat("dd/MM/yyyy").format(tmpuser.getBirthday());
-        holder.date.setText(formattedDate + " - " + Long.toString(years )+ " Year" + (years>=1?"s":""));
+        String formattedDate = new SimpleDateFormat("dd/MM/yyyy").format(tmpUser.getBirthday());
+        String output = formattedDate + " - " + Long.toString(years )+ " Year" + (years>=1?"s":"");
+        holder.name.setText(tmpUser.getName());
+        holder.date.setText(output);
     }
     @Override
     public int getItemCount(){
@@ -43,6 +47,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             super(itemView);
             name = itemView.findViewById(R.id.birthdayName);
             date = itemView.findViewById(R.id.birthdayDate);
+        }
+        private void clickedItem(){
+
         }
     }
 }
