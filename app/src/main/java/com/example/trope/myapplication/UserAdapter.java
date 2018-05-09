@@ -48,8 +48,5 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             name = itemView.findViewById(R.id.birthdayName);
             date = itemView.findViewById(R.id.birthdayDate);
         }
-        private void clickedItem(){
-
-        }
     }
 }
