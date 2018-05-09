@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalculatorActivity"
-            android:label="@string/app_Calcname"
-            />
+        <activity android:name=".CalculatorActivity" android:label="@string/app_Calcname" />
+        <activity android:name=".BirthdayMainActivity" android:label="@string/app_Birthdayname"/>
+        <activity android:name=".BirthdayAddActivity" android:label="@string/app_Birthdayname"/>
+        <activity android:name=".BirthdayListActivity" android:label="@string/app_Birthdayname"/>
     <!--</activity>-->
     </application>
 
