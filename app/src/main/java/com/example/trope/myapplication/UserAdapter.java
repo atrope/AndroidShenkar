@@ -7,13 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
-    protected List<User> list;
-    public UserAdapter(List<User> list){
+    protected ArrayList<User> list;
+    public UserAdapter(ArrayList<User> list){
         this.list = list;
     }
 
@@ -27,7 +27,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         User tmpUser = list.get(i);
         long diffInSeconds = (new Date().getTime() - tmpUser.getBirthday().getTime()) / 1000;
         long years =  diffInSeconds/(604800*52);
-        String formattedDate = new SimpleDateFormat("dd/MM/yyyy").format(tmpUser.getBirthday());
+        String formattedDate = tmpUser.getBirthdayDate();
         String output = formattedDate + " - " + Long.toString(years )+ " Year" + (years>=1?"s":"");
         holder.name.setText(tmpUser.getName());
         holder.date.setText(output);

@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class BirthdayListActivity extends AppCompatActivity {
     protected BirthdayDatabase db;
@@ -29,7 +30,8 @@ public class BirthdayListActivity extends AppCompatActivity {
         rv = findViewById(R.id.listBirthdayRecycler);
         db  = Room.databaseBuilder(getApplicationContext(),BirthdayDatabase.class, "prod").allowMainThreadQueries().build();
         rv.setLayoutManager(new LinearLayoutManager(this));
-        List<User> users = db.userDao().getAll();
+        ArrayList<User> users =  new ArrayList<User >(db.userDao().getAll());
+        Collections.sort(users);
         adapter  = new UserAdapter(users);
         rv.setAdapter(adapter);
     }

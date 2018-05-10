@@ -15,9 +15,6 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE id IN (:userIds)")
     List<User> findByIds(int[] userIds);
 
-    @Query("SELECT * FROM user WHERE name LIKE :first LIMIT 1")
-    User findByName(String first);
-
     @Insert
     void insertAll(User... users);
 
