@@ -35,7 +35,7 @@ public class BirthdayAddActivity extends AppCompatActivity {
         return true;
     }
     public void initAddBirthday(){
-        db  = Room.databaseBuilder(getApplicationContext(),BirthdayDatabase.class, "prod").allowMainThreadQueries().build();
+
         addNameBirthday = findViewById(R.id.addNameBirthday);
         calendarAddBirthdayView = findViewById(R.id.calendarAddBirthdayView);
         calendarAddBirthdayView.setDate(631200000000L);
@@ -44,17 +44,19 @@ public class BirthdayAddActivity extends AppCompatActivity {
             //show the selected date as a toast
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
-                actualDate  =  String.format("%02d", day) + "/" + String.format("%02d", month) + "/" + String.valueOf(year);
+                actualDate  =  String.format("%02d", day) + "/" + String.format("%02d", month+1) + "/" + String.valueOf(year);
             }
         });
     }
     public void onAddBirthdayClicked(View view) {
         String name = addNameBirthday.getText().toString();
+        if (!name.trim().isEmpty()){
         User tmpUser = new User(name,parseDate(actualDate,dateFormat));
         try {
+            db = Room.databaseBuilder(getApplicationContext(),BirthdayDatabase.class, "prod").allowMainThreadQueries().build();
             db.userDao().insertAll(tmpUser);
             new MaterialDialog.Builder(this)
-                    .title(R.string.dialog_addBirthday_successTitle)
+                    .title(R.string.dialog_successTitle)
                     .content(R.string.dialog_addBirthday_successContent)
                     .positiveText(R.string.dialog_addBirthday_successButton)
                     .onAny(new MaterialDialog.SingleButtonCallback() {
@@ -68,6 +70,14 @@ public class BirthdayAddActivity extends AppCompatActivity {
             new MaterialDialog.Builder(this)
                     .title(R.string.dialog_addBirthday_errorTitle)
                     .content(R.string.dialog_addBirthday_errorContent)
+                    .positiveText(R.string.dialog_addBirthday_errorButton)
+                    .show();
+        }
+        }
+        else {
+            new MaterialDialog.Builder(this)
+                    .title(R.string.dialog_addBirthday_errorTitle)
+                    .content(R.string.dialog_addBirthday_nameError)
                     .positiveText(R.string.dialog_addBirthday_errorButton)
                     .show();
         }
