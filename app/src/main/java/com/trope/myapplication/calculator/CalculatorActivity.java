@@ -1,4 +1,4 @@
-package com.example.trope.myapplication;
+package com.trope.myapplication.calculator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.evgenii.jsevaluator.JsEvaluator;
 import com.evgenii.jsevaluator.interfaces.JsCallback;
+import com.trope.myapplication.R;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;

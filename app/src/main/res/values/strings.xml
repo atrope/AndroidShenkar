@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Trope App</string>
-    <string name="app_Calcname">Calculator</string>
-    <string name="app_Birthdayname">Birthday Checker</string>
+    <string name="app_CalcName">Calculator</string>
+    <string name="app_BirthdayName">Birthday Checker</string>
+    <string name="app_Bouncing">Bouncing Ball</string>
     <string name="dialog_successTitle">Success!</string>
     <string name="dialog_deleteBirthdayContent">All the birthdays were cleared!</string>
     <string name="dialog_OK">OK!</string>

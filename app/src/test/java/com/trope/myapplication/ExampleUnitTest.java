@@ -1,4 +1,4 @@
-package com.example.trope.myapplication;
+package com.trope.myapplication;
 
 import org.junit.Test;
 

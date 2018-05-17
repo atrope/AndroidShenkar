@@ -1,10 +1,12 @@
-package com.example.trope.myapplication;
+package com.trope.myapplication.birthday;
 
 import android.arch.persistence.room.Room;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.trope.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.trope.myapplication">
+    package="com.trope.myapplication">
 
     <application
         android:allowBackup="true"
@@ -16,11 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalculatorActivity" android:label="@string/app_Calcname" />
-        <activity android:name=".BirthdayMainActivity" android:label="@string/app_Birthdayname"/>
-        <activity android:name=".BirthdayAddActivity" android:label="@string/app_Birthdayname"/>
-        <activity android:name=".BirthdayListActivity" android:label="@string/app_Birthdayname"/>
-    <!--</activity>-->
+        <activity android:name=".calculator.CalculatorActivity" android:label="@string/app_CalcName" />
+        <activity android:name=".birthday.BirthdayMainActivity" android:label="@string/app_BirthdayName"/>
+        <activity android:name=".birthday.BirthdayAddActivity" android:label="@string/app_BirthdayName"/>
+        <activity android:name=".birthday.BirthdayListActivity" android:label="@string/app_BirthdayName"/>
+            <activity android:name=".bouncingball.BouncingBallActivity" android:label="@string/app_Bouncing"/>
+        <!--</activity>-->
     </application>
 
 </manifest>

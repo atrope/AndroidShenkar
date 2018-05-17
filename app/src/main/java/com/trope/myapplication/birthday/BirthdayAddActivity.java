@@ -1,4 +1,4 @@
-package com.example.trope.myapplication;
+package com.trope.myapplication.birthday;
 
 import android.arch.persistence.room.Room;
 import android.icu.text.SimpleDateFormat;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.trope.myapplication.R;
 
 import java.util.Calendar;
 

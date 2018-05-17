@@ -1,14 +1,12 @@
-package com.example.trope.myapplication;
+package com.trope.myapplication.birthday;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.icu.text.SimpleDateFormat;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.function.LongToIntFunction;
 
 @Entity
 public class User implements Comparable<User> {

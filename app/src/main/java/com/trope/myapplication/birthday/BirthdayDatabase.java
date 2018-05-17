@@ -1,4 +1,4 @@
-package com.example.trope.myapplication;
+package com.trope.myapplication.birthday;
 
 
 import android.arch.persistence.room.Database;
