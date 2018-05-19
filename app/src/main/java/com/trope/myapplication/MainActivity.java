@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView list = (ListView) findViewById(R.id.mainList);
+        ListView list = findViewById(R.id.mainList);
         List<String> menuList = Arrays.asList("Calculator 2 Activities", "Birthday Check", "Bouncing Balls","ConstraintLayout #3");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,menuList);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
